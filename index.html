@@ -7,15 +7,40 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=El+Messiri&family=Kelly+Slab&family=Montserrat&family=Open+Sans:wght@300;400&family=Poiret+One&family=Yomogi&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/search.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/breakpoints.css">
 </head>
 <body>
-    <h1>Таблица</h1>
-    <div class="table-container">
+    <div class="content-container">
+        <div class="wrapper">
+            <div class="search-box">
+                <div class="dropdown">
+                    <div class="default-option" data-column="name">Имя</div>
+                    <i class="fa fa-angle-down"></i>
+                    <ul>
+                        <li data-column="name">Имя</li>
+                        <li data-column="profession">Профессия</li>
+                        <li data-column="education">Образование</li>
+                        <li data-column="email">Email</li>
+                        <li data-column="phone-number">Номер телефона</li>
+                    </ul>
+                </div>
+                <div class="search-bar">
+                    <input type="text" id="search" placeholder="Поиск">
+                    <button class="search-button" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <div class="matches-info">Ничего не найдено</div>
+        </div>
+
         <div class="table">
             <div class="table__head">
                 <div class="table__row">
-                    <div class="table__column-name">Name</div>
+                    <div class="table__column-name">Имя</div>
                     <div class="table__column-name">Профессия</div>
                     <div class="table__column-name">Образование</div>
                     <div class="table__column-name">Email</div>
@@ -24,36 +49,98 @@
             </div>
             <div class="table__body">
                 <div class="table__row">
-                    <div class="table__cell-content">Имя</div>
-                    <div class="table__cell-content">Профессия</div>
-                    <div class="table__cell-content">Образование</div>
-                    <div class="table__cell-content">Email</div>
-                    <div class="table__cell-content">Номер телефона</div>
+                    <div class="table__cell-content" data-column="name">
+                        <span class="cell-heading">Имя</span>
+                        <span class="cell-decoration">Кирилл</span>
+                    </div>
+                    <div class="table__cell-content" data-column="profession">
+                        <span class="cell-heading">Профессия</span>
+                        <span class="cell-decoration">Системный аналитик</span>
+                    </div>
+                    <div class="table__cell-content" data-column="education">
+                        <span class="cell-heading">Образование</span>
+                        <span class="cell-decoration">ТГУ</span>
+                    </div>
+                    <div class="table__cell-content" data-column="email">
+                        <span class="cell-heading">Email</span>
+                        <span class="cell-decoration">kirill@gmail.com</span>
+                    </div>
+                    <div class="table__cell-content" data-column="phone-number">
+                        <span class="cell-heading">Номер телефона</span>
+                        <span class="cell-decoration">+79504142354</span>
+                    </div>
                 </div>
                 <div class="table__row">
-                    <div class="table__cell-content">Имя</div>
-                    <div class="table__cell-content">Профессия</div>
-                    <div class="table__cell-content">Образование</div>
-                    <div class="table__cell-content">Email</div>
-                    <div class="table__cell-content">Номер телефона</div>
+                    <div class="table__cell-content" data-column="name">
+                        <span class="cell-heading">Имя</span>
+                        <span class="cell-decoration">Елизавета</span>
+                    </div>
+                    <div class="table__cell-content" data-column="profession">
+                        <span class="cell-heading">Профессия</span>
+                        <span class="cell-decoration">Программист Java</span>
+                    </div>
+                    <div class="table__cell-content" data-column="education">
+                        <span class="cell-heading">Образование</span>
+                        <span class="cell-decoration">ТГУ</span>
+                    </div>
+                    <div class="table__cell-content" data-column="email">
+                        <span class="cell-heading">Email</span>
+                        <span class="cell-decoration">liza@mail.ru</span>
+                    </div>
+                    <div class="table__cell-content" data-column="phone-number">
+                        <span class="cell-heading">Номер телефона</span>
+                        <span class="cell-decoration">+79134142354</span>
+                    </div>
                 </div>
                 <div class="table__row">
-                    <div class="table__cell-content">Имя</div>
-                    <div class="table__cell-content">Профессия</div>
-                    <div class="table__cell-content">Образование</div>
-                    <div class="table__cell-content">Email</div>
-                    <div class="table__cell-content">Номер телефона</div>
+                    <div class="table__cell-content" data-column="name">
+                        <span class="cell-heading">Имя</span>
+                        <span class="cell-decoration">Елизавета</span>
+                    </div>
+                    <div class="table__cell-content" data-column="profession">
+                        <span class="cell-heading">Профессия</span>
+                        <span class="cell-decoration">UX-дизайнер</span>
+                    </div>
+                    <div class="table__cell-content" data-column="education">
+                        <span class="cell-heading">Образование</span>
+                        <span class="cell-decoration">ИТМО</span></div>
+                    <div class="table__cell-content" data-column="email">
+                        <span class="cell-heading">Email</span>
+                        <span class="cell-decoration">elizabeth@mail.ru</span>
+                    </div>
+                    <div class="table__cell-content" data-column="phone-number">
+                        <span class="cell-heading">Номер телефона</span>
+                        <span class="cell-decoration">Номер телефона</span>
+                    </div>
                 </div>
                 <div class="table__row">
-                    <div class="table__cell-content">Имя</div>
-                    <div class="table__cell-content">Профессия</div>
-                    <div class="table__cell-content">Образование</div>
-                    <div class="table__cell-content">Email</div>
-                    <div class="table__cell-content">Номер телефона</div>
+                    <div class="table__cell-content" data-column="name">
+                        <span class="cell-heading">Имя</span>
+                        <span class="cell-decoration">Максим</span>
+                    </div>
+                    <div class="table__cell-content" data-column="profession">
+                        <span class="cell-heading">Профессия</span>
+                        <span class="cell-decoration">Системный аналитик</span>
+                    </div>
+                    <div class="table__cell-content" data-column="education">
+                        <span class="cell-heading">Образование</span>
+                        <span class="cell-decoration">ВШЭ</span>
+                    </div>
+                    <div class="table__cell-content" data-column="email">
+                        <span class="cell-heading">Email</span>
+                        <span class="cell-decoration">max@gmail.com</span>
+                    </div>
+                    <div class="table__cell-content" data-column="phone-number">
+                        <span class="cell-heading">Номер телефона</span>
+                        <span class="cell-decoration">+79504562378</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <script src="/js/dropdown.js"></script>
+    <script src="/js/table-search.js"></script>
+    <script src="https://kit.fontawesome.com/a3ceedbc1a.js" crossorigin="anonymous"></script>
 </body>
 </html>
